@@ -1,5 +1,5 @@
 const express = require("express")
-const cors = require("cors")
+// const cors = require("cors")
 const morgan = require("morgan")
 const path = require("path")
 const mongoose = require('mongoose')
@@ -30,23 +30,23 @@ db.on('error', err => {
 	console.error('connection error:', err)
 })
 
-var corsOptions = {
-	credentials: true,
-	optionsSuccessStatus: 200,
-	origin: [process.env.FRONTEND_APP_URL]
-}
+// var corsOptions = {
+// 	credentials: true,
+// 	optionsSuccessStatus: 200,
+// 	origin: [process.env.FRONTEND_APP_URL]
+// }
 
 const app = express();
-app.use(cors(corsOptions)) //for handling cors origin handling
+// app.use(cors(corsOptions)) //for handling cors origin handling
 app.use(express.json()) // to handle coming json data from client without body-parser
 app.use(morgan("dev")) // to show each end point request in console log
 app.use(cookieParser());
-app.use((req,res,next)=>{
-	res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_APP_URL);
-	res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
-	res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
-	next(); 
-})
+// app.use((req,res,next)=>{
+// 	res.setHeader('Access-Control-Allow-Origin', process.env.FRONTEND_APP_URL);
+// 	res.setHeader('Access-Control-Allow-Methods','GET,POST,PUT,PATCH,DELETE');
+// 	res.setHeader('Access-Control-Allow-Methods','Content-Type','Authorization');
+// 	next(); 
+// })
 
 
 
