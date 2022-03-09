@@ -5,7 +5,6 @@ const mongoose = require('mongoose')
 const cookieParser = require("cookie-parser");
 if (process.env.NODE_ENV !== 'production') {
 	require('dotenv').config();
-	const cors = require("cors")
 }
 
 import { first } from "./protected_functions/first"
@@ -29,7 +28,8 @@ db.once('open', _ => {
 db.on('error', err => {
 	console.error('connection error:', err)
 })
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
+	const cors = require("cors")
 	var corsOptions = {
 		credentials: true,
 		optionsSuccessStatus: 200,
@@ -91,7 +91,7 @@ app.post("/api/removeNotification", verifyToken, removeNotification)
 app.post("/api/deleteMessages", deleteMessages)
 
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
 	app.use(express.static("client/build"))
 	app.get("*", (req, res) => {
 		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
