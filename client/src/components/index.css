@@ -1,0 +1,79 @@
+
+body{
+  box-sizing: border-box;
+}
+  
+  .whole {
+    display: block;
+    position: relative;
+    min-height: 90vh;
+    font-weight: 400;
+    font-family: sans-serif;
+    background: #12c2e9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+  }
+  
+  .whole, .App, .outer-div {
+    width: 100%;
+    height: 100%;
+  }
+  .outer-div{
+    position: absolute;    
+    left: 25%;
+    right: 20%;
+    height: 50%;
+    top: 20%;
+    justify-content: center;
+    width: 100vh;
+  }
+  
+  .navbar-light {
+    background-color: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  }
+  
+  .inner-div {
+    background: #ffffff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 40px 55px 45px 55px;
+    border-radius: 15px;
+    transition: all .3s;
+  }
+  
+  .outer-div .form-control:focus {
+    border-color: #167bff;
+    box-shadow: none;
+  }
+  
+  .outer-div h3 {
+    text-align: center;
+    margin: 0;
+    line-height: 1;
+    padding-bottom: 20px;
+  }
+  
+  .custom-control-label {
+    font-weight: 400;
+  }
+  
+  .forgot-password,
+  .forgot-password a {
+    text-align: right;
+    font-size: 13px;
+    padding-top: 10px;
+    color: #7f7d7d;
+    margin: 0;
+  }
+  
+  .forgot-password a {
+    color: #167bff;
+  }
+  @media screen and (max-width: 576px) {
+    .outer-div{
+      left: 0vh;
+      right: 0vh;
+      width: 100%;
+    }
+  }
