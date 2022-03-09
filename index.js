@@ -28,6 +28,8 @@ db.once('open', _ => {
 db.on('error', err => {
 	console.error('connection error:', err)
 })
+
+const app = express();
 if (process.env.NODE_ENV === 'production') {
 	const cors = require("cors");
 	var corsOptions = {
@@ -37,7 +39,6 @@ if (process.env.NODE_ENV === 'production') {
 	}
 	app.use(cors(corsOptions)) //for handling cors origin handling
 }
-const app = express();
 app.use(express.json()) // to handle coming json data from client without body-parser
 app.use(morgan("dev")) // to show each end point request in console log
 app.use(cookieParser());
