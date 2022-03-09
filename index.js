@@ -29,7 +29,7 @@ db.on('error', err => {
 	console.error('connection error:', err)
 })
 if (process.env.NODE_ENV === 'production') {
-	const cors = require("cors")
+	const cors = require("cors");
 	var corsOptions = {
 		credentials: true,
 		optionsSuccessStatus: 200,
